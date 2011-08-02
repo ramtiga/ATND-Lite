@@ -1,5 +1,26 @@
 This is Perl module ATND::Lite.
 
+*** How to Use ***
+use ATND::Lite;
+use utf8;
+use Encode qw/encode_utf8/;
+
+my $search = {
+  keyword_or => ["iphone", "android"],
+  ym  => '201108',
+  count => 20,
+};
+
+my $obj = ATND::Lite->new(%$search);
+my $ret = $obj->get_event();
+
+for (@$ret) {
+  print encode_utf8($_->{title})."\n";
+  print $_->{event_url}."\n";
+}
+
+*******
+
 INSTALLATION
 
 ATND::Lite installation is straightforward. If your CPAN shell is set up,
