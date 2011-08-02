@@ -2,7 +2,7 @@ package ATND::Lite;
 
 use strict;
 use warnings;
-use base 'WebService::Simple';
+use WebService::Simple;
 use Encode qw/encode_utf8/;
 use Data::Dumper;
 use YAML;
